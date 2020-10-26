@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
-  "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "name": "my-vinyl-collection",
+  "author": "Maya Estalilla <mayaestalilla@gmail.com>",
+  "description": "A personal project used to demonstrate how to build an e-commerce site on the JAMStack.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "private": true,
   "dependencies": {
     "babel-plugin-styled-components": "^1.11.1",
     "gatsby": "^2.24.79",

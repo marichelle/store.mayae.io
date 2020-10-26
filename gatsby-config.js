@@ -7,7 +7,7 @@ dotenv.config({
 
 module.exports = {
   siteMetadata: {
-    title: `My Vinyl Collection`,
+    title: `Maya's Vinyl Collection`,
     description: `A personal project used to demonstrate how to build an e-commerce site on the JAMStack.`,
     author: `mayaestalilla@gmail.com`,
   },
@@ -47,5 +47,12 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
   ],
 }

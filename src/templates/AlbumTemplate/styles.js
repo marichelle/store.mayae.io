@@ -62,7 +62,7 @@ export const PriceButtonWrapper = styled.div`
   }
 
   button {
-    background-color: #9cebd5;
+    background-color: rgb(102, 51, 153);
     border: transparent;
     border-radius: 60px;
     box-sizing: border-box;
@@ -80,7 +80,7 @@ export const PriceButtonWrapper = styled.div`
     height: 50px;
 
     &:hover {
-      background-color: #79b0a1;
+      background-color: rgba(102, 51, 153, 0.75);
     }
   }
 `

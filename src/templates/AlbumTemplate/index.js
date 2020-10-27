@@ -1,8 +1,14 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 import { Layout } from '@components'
-import { AlbumWrapper } from './styles'
+import {
+  AlbumCover,
+  AlbumDetails,
+  AlbumWrapper,
+  PriceButtonWrapper,
+} from './styles'
 
 const AlbumTemplate = ({ data }) => {
   console.log(data)
@@ -12,25 +18,23 @@ const AlbumTemplate = ({ data }) => {
     description: { description },
     image,
     price,
-    mediaCondition,
-    sleeveCondition,
   } = data.contentfulAlbum
 
   return (
     <Layout>
       <AlbumWrapper>
-        <h1>
-          {artist} - {title}
-        </h1>
-        <img src={image.fluid.src} alt={title} />
-        <p>{description}</p>
-        <p>
-          Media Condition: {mediaCondition.name}
-          <br />
-          Sleeve Condition: {sleeveCondition.name}
-          <br />
-        </p>
-        {`$${parseFloat(price).toFixed(2)}`}
+        <AlbumCover>
+          <Img fluid={image.fluid} alt={title} />
+        </AlbumCover>
+        <AlbumDetails>
+          <h1>{title}</h1>
+          <h2>{artist}</h2>
+          <p>{description}</p>
+          <PriceButtonWrapper>
+            <span>{`$${parseFloat(price)}`}</span>
+            <button>Buy Now</button>
+          </PriceButtonWrapper>
+        </AlbumDetails>
       </AlbumWrapper>
     </Layout>
   )
@@ -46,7 +50,7 @@ export const PageQuery = graphql`
       }
       image {
         fluid {
-          src
+          ...GatsbyContentfulFluid
         }
       }
       price

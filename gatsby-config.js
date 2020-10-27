@@ -46,6 +46,13 @@ module.exports = {
         extensions: [],
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        display: 'swap',
+        fonts: [`Bentham`, `Playfair Display\:400`, `Raleway\:400,500`],
+      },
+    },
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-contentful`,
